@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./public/sprites/invader.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="pontuacao-tela">
+      <div>
+        <span>Dificuldade: <span class="dificuldade">Difícil</span></span>
+        <span>Pontos: <span class="pontos">0</span></span>
+        <span>Nível: <span class="nivel">1</span></span>
+        <span>Maior pontuação: <span class="maiorPontuacao">0</span></span>
+      </div>
+    </section>
+
+    <section class="tela-inicio tela" >
+      <div>
+        <h1>Space Invaders</h1>
+        <p>Modo de jogo</p>
+        <button class="botao-play facil">Fácil</button>
+        <button class="botao-play medio">Médio</button>
+        <button class="botao-play dificil">Difícil</button>
+      </div>
+    </section>
+
+    <section class="fim-jogo tela">
+      <div>
+        <h1>Você Perdeu</h1>
+        <button class="botao-resetar">Jogar Novamente</button>
+      </div>
+    </section>
+    <canvas></canvas>
+    <script src="src/main.js" type="module"></script>
+  </body>
+</html>
