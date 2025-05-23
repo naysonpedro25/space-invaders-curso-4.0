@@ -71,6 +71,9 @@ function comecarJogo() {
   k.onUpdate(() => {
     if (k.get("inimigo").length === 0) {
       nivel++;
+      k.play("proximo-nivel", {
+        volume: 0.1,
+      });
       nivelTexto.innerText = nivel;
       criarGrade();
     }
