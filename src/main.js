@@ -55,11 +55,10 @@ function configuracaoBotoesInicio() {
       k.loadSound("acerto", "../public/sounds/hit.mp3");
       k.loadSound("explosao", "../public/sounds/explosion.mp3");
       k.loadSound("proximo-nivel", "../public/sounds/next_level.mp3");
-      k.loadSprite("nave", "../public/sprites/spaceship.png");
-      k.loadSprite("motor", "../public/sprites/engine.png");
-      k.loadSprite("inimigo", "../public/sprites/invader-sprites.png", {
+      k.loadSprite("nave", "/sprites/spaceship.png");
+      k.loadSprite("motor", "/sprites/engine.png");
+      k.loadSprite("inimigo", "/sprites/invader-sprites.png", {
         sliceX: 2,
-        sliceY: 0,
         anims: {
           run: {
             from: 0,
@@ -69,9 +68,8 @@ function configuracaoBotoesInicio() {
           },
         },
       });
-      k.loadSprite("motor-ligado", "../public/sprites/engine-effects.png", {
+      k.loadSprite("motor-ligado", "/sprites/engine-effects.png", {
         sliceX: 4,
-        sliceY: 0,
         anims: {
           run: {
             from: 0,
@@ -81,7 +79,6 @@ function configuracaoBotoesInicio() {
           },
         },
       });
-
       canvas.focus();
       comecarJogo();
     });

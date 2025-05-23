@@ -1,7 +1,7 @@
 import { k } from "../../main";
 
 export function carregarSprites() {
-  k.loadSprite("nave", "../public/sprites/spaceship.png");
+  k.loadSprite("nave", "../../sprites/spaceship.png");
   k.loadSprite("motor", "../public/sprites/engine.png");
   k.loadSprite("inimigo", "../public/sprites/invader-sprites.png", {
     sliceX: 2,
