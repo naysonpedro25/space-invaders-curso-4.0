@@ -51,9 +51,37 @@ function configuracaoBotoesInicio() {
       });
 
       k.loadRoot("./");
+      k.loadSound("projetil", "../public/sounds/shoot.mp3");
+      k.loadSound("acerto", "../public/sounds/hit.mp3");
+      k.loadSound("explosao", "../public/sounds/explosion.mp3");
+      k.loadSound("proximo-nivel", "../public/sounds/next_level.mp3");
+      k.loadSprite("nave", "../public/sprites/spaceship.png");
+      k.loadSprite("motor", "../public/sprites/engine.png");
+      k.loadSprite("inimigo", "../public/sprites/invader-sprites.png", {
+        sliceX: 2,
+        sliceY: 0,
+        anims: {
+          run: {
+            from: 0,
+            to: 1,
+            loop: true,
+            speed: 5,
+          },
+        },
+      });
+      k.loadSprite("motor-ligado", "../public/sprites/engine-effects.png", {
+        sliceX: 4,
+        sliceY: 0,
+        anims: {
+          run: {
+            from: 0,
+            to: 3,
+            loop: true,
+            speed: 12,
+          },
+        },
+      });
 
-      carregarSons();
-      carregarSprites();
       canvas.focus();
       comecarJogo();
     });
