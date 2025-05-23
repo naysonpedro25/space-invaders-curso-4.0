@@ -22,7 +22,8 @@ let nivel = 1;
 const pontosTexto = document.querySelector(".pontos");
 const maiorPontuacaoTexto = document.querySelector(".maiorPontuacao");
 let pontos = 0;
-let maiorPontuacao = 0;
+let maiorPontuacao = Number(localStorage.getItem("maiorPontuacao")) || 0;
+maiorPontuacaoTexto.innerText = maiorPontuacao;
 
 const fimJogoTela = document.querySelector(".fim-jogo");
 fimJogoTela.remove();
@@ -51,10 +52,10 @@ function configuracaoBotoesInicio() {
       });
 
       k.loadRoot("./");
-      k.loadSound("projetil", "../public/sounds/shoot.mp3");
-      k.loadSound("acerto", "../public/sounds/hit.mp3");
-      k.loadSound("explosao", "../public/sounds/explosion.mp3");
-      k.loadSound("proximo-nivel", "../public/sounds/next_level.mp3");
+      k.loadSound("projetil", "/sounds/shoot.mp3");
+      k.loadSound("acerto", "/sounds/hit.mp3");
+      k.loadSound("explosao", "/sounds/explosion.mp3");
+      k.loadSound("proximo-nivel", "/sounds/next_level.mp3");
       k.loadSprite("nave", "/sprites/spaceship.png");
       k.loadSprite("motor", "/sprites/engine.png");
       k.loadSprite("inimigo", "/sprites/invader-sprites.png", {
@@ -130,9 +131,12 @@ export function configurColisoes() {
       inimigo.destroy();
       projetil.destroy();
       pontos += 10;
-      maiorPontuacao = Math.max(maiorPontuacao, pontos);
       pontosTexto.innerText = pontos;
-      maiorPontuacaoTexto.innerText = maiorPontuacao;
+     if (pontos > maiorPontuacao) {
+        maiorPontuacao = pontos;
+        localStorage.setItem("maiorPontuacao", maiorPontuacao);
+        maiorPontuacaoTexto.innerText = maiorPontuacao;
+      }
     }
   });
 
